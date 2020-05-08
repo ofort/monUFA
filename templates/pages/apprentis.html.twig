@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Apprentis{% endblock %}
+
+{% block body %}
+    <div class='container'>
+    <div class='jumbotron text-center'>
+
+        <h1>UFA du Hainaut</h1>
+        <p>Les apprentis</p>
+    </div>
+    <div class="container">
+        <table class="table table-condensed">
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de naissance</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            {% for app in apprentis %}
+                <tr>
+                    <td><strong><a href="{{ path('apprenti.show', {id: app.id}) }}">{{ app.nom | upper }}</a></strong></td>
+                    <td>{{ app.prenom }}</td>
+                    <td>{{ app.dateNaissance | date("d/m/Y") }}</td>
+                    <td>{{ app.email }}</td>
+                    <td>{{ app.telephone }}</td>
+                </tr>
+            {% endfor %}
+            {#				<tr>
+                                <td>Nom</td>
+                                <td>Prénom</td>
+                                <td>date de naissance</td>
+                            </tr>#}
+        </table>
+    </div>
+{% endblock %}

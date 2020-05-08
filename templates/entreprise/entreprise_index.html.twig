@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block body %}
+    <div class='container'>
+    <div class='jumbotron text-center'>
+
+        <h1>UFA du Hainaut</h1>
+        <p>Les entrepises</p>
+    </div>
+    <div class="container">
+        <table class="table table-condensed">
+            <th>Nom</th>
+            <th>Adresse1</th>
+            <th>Adresse2/th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            {% for entreprise in entreprises %}
+                <tr>
+                    <td><strong><a href="{{ path('entreprise.show', {id: entreprise.id}) }}">{{ entreprise.nom | upper }}</a></strong></td>
+                    <td>{{ entreprise.adresse1 }}</td>
+                    <td>{{ entreprise.adresse2 | date("d/m/Y") }}</td>
+                    <td>{{ entreprise.codePostal }}</td>
+                    <td>{{ entreprise.ville }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+{% endblock %}

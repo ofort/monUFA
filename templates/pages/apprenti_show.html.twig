@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Apprentis{% endblock %}
+
+{% block body %}
+    <div class='container'>
+    <div class='jumbotron text-center'>
+
+        <h1>UFA du Hainaut</h1>
+        <h2>{{ apprenti.nom | upper }}</h2>
+    </div>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="2">{{ apprenti.prenom }} <strong>{{ apprenti.nom | upper }}</strong></td>
+            </tr>
+            <tr>
+                <td>Date de naissance :</td>
+                <td>{{ apprenti.dateNaissance | date("d/m/Y") }}</td>
+            </tr>
+            <tr>
+                <td>Email :</td>
+                <td>{{ apprenti.email }}</td>
+            </tr>
+            <tr>
+                <td>Téléphone</td>
+                <td>{{ apprenti.telephone }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ apprenti.memo }}</td>
+            </tr>
+        </table>
+
+    </div>
+{% endblock %}
