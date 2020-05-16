@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Appreti Edit{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block body %}
 <div class='container'>
@@ -23,7 +23,7 @@
         </div>
         <div class="row"><div class="col-md12">{{ form_row(form.memo) }}</div></div>
 
-            <input type="submit"/>
+            <input class="btn btn-primary" type="submit" value="Enregistrer"/>
         {{ form_end(form) }}
     </div>
 </div>

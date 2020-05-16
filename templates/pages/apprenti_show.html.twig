@@ -31,6 +31,6 @@
                 <td colspan="2">{{ apprenti.memo }}</td>
             </tr>
         </table>
-
+        <a class="btn btn-primary" href="{{ path('admin.apprenti.edit', {id: apprenti.id}) }}">Editer</a>
     </div>
 {% endblock %}
