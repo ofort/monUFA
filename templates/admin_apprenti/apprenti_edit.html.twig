@@ -12,16 +12,17 @@
     <div class="container">
         {{ form_start(form)}}
         <div class="row">
-            <div class="col-md4">{{ form_row(form.prenom) }}</div>
-            <div class="col-md4">{{ form_row(form.nom) }}</div>
-            <div class="col-md4">{{ form_row(form.dateNaissance) }}</div>
+            <div class="col-md-3">{{ form_row(form.prenom) }}</div>
+            <div class="col-md-3">{{ form_row(form.nom) }}</div>
+            <div class="col-md-3">{{ form_row(form.dateNaissance) }}</div>
+            <div class="col-md-3">{{ form_row(form.dateCreation) }}</div>
         </div>
 
         <div class="row">
-            <div class="col-md4">{{ form_row(form.telephone) }}</div>
-            <div class="col-md4">{{ form_row(form.email) }}</div>
+            <div class="col-md-4">{{ form_row(form.telephone) }}</div>
+            <div class="col-md-4">{{ form_row(form.email) }}</div>
         </div>
-        <div class="row"><div class="col-md12">{{ form_row(form.memo) }}</div></div>
+        <div class="row"><div class="col-md-12">{{ form_row(form.memo) }}</div></div>
 
             <input class="btn btn-primary" type="submit" value="Enregistrer"/>
         {{ form_end(form) }}

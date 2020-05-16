@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -46,6 +47,18 @@ class Apprenti
      * @ORM\Column(type="string", length=255)
      */
     private $telephone;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $dateCreation;
+
+    public function __construct()
+    {
+//        $this->dateCreation = date('Y-m-d');
+        $st= time();
+        $this->dateCreation = new DateTime("@$st");
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +133,18 @@ class Apprenti
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    public function getDateCreation(): ?\DateTimeInterface
+    {
+        return $this->dateCreation;
+    }
+
+    public function setDateCreation(\DateTimeInterface $dateCreation): self
+    {
+        $this->dateCreation = $dateCreation;
 
         return $this;
     }

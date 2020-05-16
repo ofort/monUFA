@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Admin;
+namespace App\Controller\AdminApprenti;
 
 use App\Entity\Apprenti;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -45,7 +45,7 @@ class AdminApprentiController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()){
             $em->flush();
-            $this->redirectToRoute('admin.apprenti.index');
+            $this->redirectToRoute("admin.apprenti.index");
         }
 
         return $this->render('admin_apprenti/apprenti_edit.html.twig', [
@@ -73,7 +73,7 @@ class AdminApprentiController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $em->persist($apprenti);
             $em->flush();
-            $this->redirectToRoute('admin.apprenti.index');
+            $this->redirectToRoute("admin.apprenti.index");
         }
 
         return $this->render('admin_apprenti/apprenti_edit.html.twig', [

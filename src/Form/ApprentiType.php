@@ -27,6 +27,11 @@ class ApprentiType extends AbstractType
             ])
             ->add('email')
             ->add('telephone')
+            ->add('dateCreation',DateType::class,[
+                'label' => "Date de Création",
+                'widget' => 'single_text', // le navigateur ajoutera un "datepicker" automatiquement
+                'disabled' => true,
+            ])
         ;
     }
 
