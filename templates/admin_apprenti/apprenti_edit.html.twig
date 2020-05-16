@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Appreti Edit{% endblock %}
+
+{% block body %}
+<div class='container'>
+    <div class='jumbotron text-center'>
+
+        <h1>UFA du Hainaut</h1>
+        <h1>Modification de l'apprenti : {{apprenti.prenom}} {{ apprenti.nom}}</h1>
+    </div>
+    <div class="container">
+        {{ form_start(form)}}
+        <div class="row">
+            <div class="col-md4">{{ form_row(form.prenom) }}</div>
+            <div class="col-md4">{{ form_row(form.nom) }}</div>
+            <div class="col-md4">{{ form_row(form.dateNaissance) }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md4">{{ form_row(form.telephone) }}</div>
+            <div class="col-md4">{{ form_row(form.email) }}</div>
+        </div>
+        <div class="row"><div class="col-md12">{{ form_row(form.memo) }}</div></div>
+
+            <input type="submit"/>
+        {{ form_end(form) }}
+    </div>
+</div>
+    {% endblock %}
