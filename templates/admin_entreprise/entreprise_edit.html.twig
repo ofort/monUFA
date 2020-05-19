@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class='jumbotron text-center'>
+
+            <h1>UFA du Hainaut</h1>
+            <h1>{{ action }}</h1>
+        </div>
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.nom) }}</div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.adresse1) }}</div>
+                <div class="col-md-4">{{ form_row(form.ville) }}</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">{{ form_row(form.adresse2) }}</div>
+                <div class="col-md-4">{{ form_row(form.codePostal) }}</div>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Enregistrer"/>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

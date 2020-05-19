@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Apprentis{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <div class='jumbotron text-center'>
+
+            <h1>UFA du Hainaut</h1>
+            <p>Les apprentis</p>
+        </div>
+        <div class="container">
+            <div class="row mb-4 ">
+                <a class="btn btn-primary btn-block" href="{{ path('admin.apprenti.new') }}">Ajouter un apprenti</a>
+            </div>
+            <div class="row">
+                <table class="table table-hover table-sm">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for apprenti in apprentis %}
+                        <tr scope="row">
+                            <td><strong>{{ apprenti.nom | upper }}</strong></td>
+                            <td>{{ apprenti.prenom }}</td>
+                            <td><a href="{{ path('admin.apprenti.edit', {id: apprenti.id}) }}"
+                                   class="btn btn-sm btn-outline-success">Modifier</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
